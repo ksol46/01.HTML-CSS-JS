@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     .container {
-      display: flex;  /* 플렉스 컨테이너 지정 */
+      display: flex;
       background-color: #eee;
       border: 1px solid #222;
       margin-bottom: 30px;
@@ -17,15 +17,18 @@
       width: 80px;
       background-color: #222;   
     }
+    /* flex-wrap : 아이템들이 넘칠때 감싸는 기능*/
     #opt1{
-      flex-wrap: nowrap;           /* 한 줄에 표시 */
+      /* 디폴트 */
+      flex-wrap: nowrap;
     }
     #opt2{
-      flex-wrap: wrap;             /* 여러 줄에 표시 */
+      flex-wrap: wrap;
     }
     #opt3{
-      flex-wrap: wrap-reverse;     /* 항목의 순서를 바꿔 여러 줄에 표시 */   
-    }                 
+      flex-wrap: wrap-reverse;
+    }        
+
     p {
       color: #fff;
       text-align: center;
