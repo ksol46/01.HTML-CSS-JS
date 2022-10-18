@@ -65,8 +65,13 @@ a {
   padding: 30px;
 }
 .board_list th,
+<<<<<<< HEAD
 td {
   border-spacing: 0;
+=======
+.board_list td {
+  /* border-spacing: 0; */
+>>>>>>> 55e390e31e9c758f09fef76f363034dc69c96fe1
   border-bottom: 1px solid #444444;
   padding: 10px;
   text-align: center;
@@ -287,6 +292,7 @@ td {
   }
 
   .board_list th:nth-of-type(1),
+<<<<<<< HEAD
   td:nth-of-type(1) {
     display: none;
   }
@@ -296,6 +302,17 @@ td {
   }
   .board_list th:nth-of-type(4),
   td:nth-of-type(4) {
+=======
+  .board_list td:nth-of-type(1) {
+    display: none;
+  }
+  .board_list th:nth-of-type(3),
+  .board_list td:nth-of-type(3) {
+    display: none;
+  }
+  .board_list th:nth-of-type(4),
+  .board_list td:nth-of-type(4) {
+>>>>>>> 55e390e31e9c758f09fef76f363034dc69c96fe1
     display: none;
   }
 
