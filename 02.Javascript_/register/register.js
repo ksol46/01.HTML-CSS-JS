@@ -8,8 +8,7 @@ const tel = document.querySelector("#tel");
 const submitButton = document.querySelector("#submit_button");
 let chkFlag = true;
 
-//https://goddino.tistory.com/52
-//전송 버튼 클릭시 입력되지 않은 정보가 있을때
+//전송 버튼 클릭시
 submitButton.addEventListener("click", function (e) {
   let chkArray = [idConfirm(), pwd1Confirm(), pwd2Confirm(), fullnameConfirm(), emailConfirm(), telConfirm()];
   /* 
@@ -56,6 +55,7 @@ function idConfirm() {
   const mustId = document.querySelector(".must_id");
   const overlap = document.querySelector(".overlap");
 
+  //텍스트가 남아있는 걸 방지하기 위해
   mustId.style.display = "none";
   overlap.style.display = "none";
 
@@ -64,6 +64,7 @@ function idConfirm() {
     mustId.style.display = "block";
     return false;
   } else {
+    //유효식이 맞지 않으면
     if (!idCheck(userid.value)) {
       overlap.style.display = "block";
       return false;
@@ -149,6 +150,7 @@ function telConfirm() {
   const regTel = document.querySelector(".reg_tel");
   regTel.style.display = "none";
 
+  //전화번호가 있는데 유효성 체크에 통과하지 못하면
   if (!telCheck(tel.value) && tel.value) {
     regTel.style.display = "block";
     chkFlag = false;
@@ -179,6 +181,3 @@ function emailCheck(email) {
   const reg = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
   return reg.test(email);
 }
-
-// 버그1: 비밀번호 두개 입력 후 비밀번호를 지우고 다시 쓰면 일치 하지 않는데 그냥 전송이 된다.
-// 버그2: 경고 문제가 있는데 입력 클릭시 그대로 전송이 된다.
