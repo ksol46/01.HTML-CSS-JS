@@ -22,7 +22,6 @@ submitButton.addEventListener("click", function (e) {
   }
   */
 
-  /*
   //방법2
   let chkFlag = true;
   for (const chk of chkArray) {
@@ -34,7 +33,6 @@ submitButton.addEventListener("click", function (e) {
   if (chkFlag) {
     document.signup.submit();
   }
-  */
 
   /*
   //방법3
