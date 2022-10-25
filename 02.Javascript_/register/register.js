@@ -151,7 +151,7 @@ function telConfirm() {
   //전화번호가 있는데 유효성 체크에 통과하지 못하면
   if (!telCheck(tel.value) && tel.value) {
     regTel.style.display = "block";
-    chkFlag = false;
+    return false;
   }
   return true;
 }
