@@ -57,13 +57,19 @@ function idConfirm() {
   mustId.style.display = "none";
   overlap.style.display = "none";
 
+  console.log(userid.value)
+  const test = 0
+
+  //0 => false(숫자일때)
+  //input은 문자형으로 받는다
+
   //공백일때
-  if (!userid.value) {
+  if (!userid.value.replace(/ /g,"")) {
     mustId.style.display = "block";
     return false;
   } else {
     //유효식이 맞지 않으면
-    if (!idCheck(userid.value)) {
+    if (!idCheck(userid.value.replace(/ /g,""))) {
       overlap.style.display = "block";
       return false;
     }
@@ -78,11 +84,11 @@ function pwd1Confirm() {
   mustPwd1.style.display = "none";
   regPwd.style.display = "none";
 
-  if (!pwd1.value) {
+  if (!pwd1.value.replace(/ /g,"")) {
     mustPwd1.style.display = "block";
     return false;
   } else {
-    if (!pwdCheck(pwd1.value)) {
+    if (!pwdCheck(pwd1.value.replace(/ /g,""))) {
       regPwd.style.display = "block";
       return false;
     }
@@ -97,14 +103,14 @@ function pwd2Confirm() {
   mustPwd2.style.display = "none";
   same.style.display = "none";
 
-  if (!pwd2.value) {
+  if (pwd2.value.replace(/ /g,"") === "") {
     mustPwd2.style.display = "block";
     return false;
   } else {
     //두개의 패스워드 값이 있을때
-    if (pwd1.value && pwd2.value) {
+    if (pwd1.value.replace(/ /g,"") && pwd2.value.replace(/ /g,"")) {
       //패스워드가 같지 않다면
-      if (pwd1.value !== pwd2.value) {
+      if (pwd1.value.replace(/ /g,"") !== pwd2.value.replace(/ /g,"")) {
         same.style.display = "block";
         return false;
       }
@@ -117,7 +123,7 @@ function fullnameConfirm() {
   const mustFullname = document.querySelector(".must_fullname");
   mustFullname.style.display = "none";
 
-  if (!fullname.value) {
+  if (!fullname.value.replace(/ /g,"")) {
     mustFullname.style.display = "block";
     return false;
   }
@@ -131,11 +137,11 @@ function emailConfirm() {
   mustEmail.style.display = "none";
   regEmail.style.display = "none";
 
-  if (!email.value) {
+  if (!email.value.replace(/ /g,"")) {
     mustEmail.style.display = "block";
     return false;
   } else {
-    if (!emailCheck(email.value)) {
+    if (!emailCheck(email.value.replace(/ /g,""))) {
       regEmail.style.display = "block";
       return false;
     }
@@ -149,7 +155,7 @@ function telConfirm() {
   regTel.style.display = "none";
 
   //전화번호가 있는데 유효성 체크에 통과하지 못하면
-  if (!telCheck(tel.value) && tel.value) {
+  if (!telCheck(tel.value.replace(/ /g,"")) && tel.value.replace(/ /g,"")) {
     regTel.style.display = "block";
     return false;
   }
