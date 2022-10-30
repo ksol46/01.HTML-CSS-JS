@@ -20,10 +20,12 @@
 
 
         getData(url).then(
-            data => data.json()
+            data => {return data.json()}
         ).then(
-            result => console.log(result)
-        );
+            result => {return result.main }
+        ).then(
+            result => {console.log(result)}
+        )
 
     </script>
 </head>
